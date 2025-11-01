@@ -48,8 +48,19 @@
     .tab{display:none}
     .tab.active{display:block}
 
+    /* Subnav for mobility */
+    .subnav{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+    .subnav a{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);color:#d7e6ff;font-weight:700;font-size:13px}
+    .subnav a.active{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#08122b}
+    .subtab{display:none}
+    .subtab.active{display:block}
+
+    .lang{display:grid;grid-template-columns: 200px 1fr;align-items:center;gap:14px;margin:12px 0}
+    .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.08);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+    .bar > i{position:absolute;inset:0;width:0%;background:linear-gradient(90deg,var(--accent-2),var(--accent));}
+
     footer{padding:26px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
-    @media (max-width:900px){.grid{grid-template-columns: 1fr}h1{font-size:34px}h2{font-size:28px}}
+    @media (max-width:900px){.grid{grid-template-columns: 1fr}h1{font-size:34px}h2{font-size:28px}.lang{grid-template-columns: 1fr}}
   </style>
 </head>
 <body>
@@ -68,6 +79,7 @@
 </header>
 
 <main class="wrap">
+  <!-- WELCOME -->
   <section id="welcome" class="tab active">
     <div class="grid">
       <div class="card pad" style="display:grid;place-items:center">
@@ -78,9 +90,11 @@
         <p>
           I am <strong>Youssef HASSABI</strong>. After studying two years of Preparatory Classes for Engineering Schools (CPGE MP) at Lycée d’Excellence Mohammed VI – LEM6, Casablanca. I am now a proud student of <strong>ENSEEIHT</strong>, a top-ranking engineering graduate school based in Toulouse. Since I have always been passionate about mathematics, technologies and computer science, I am following the <strong>Computer and Digital Science Engineering</strong> course.
         </p>
+        <!-- Embedded intro video -->
         <div class="ratio" style="margin:20px 0;">
           <video controls poster="youssef.jpg">
-            <source src="ABOUT ME.mp4" type="video/mp4" />
+            <!-- Encode the space to avoid 404 on GitHub Pages -->
+            <source src="ABOUT%20ME.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -92,7 +106,84 @@
     </div>
   </section>
 
-  <!-- Other sections remain unchanged -->
+  <!-- ENGINEERING COURSE -->
+  <section id="course" class="tab">
+    <div class="card pad">
+      <h2>ENGINEERING COURSE</h2>
+      <p>I'm currently studying for a diploma in digital and computer science engineering. We follow a common core covering all the subjects listed below; this page will be updated each semester.</p>
+      <h3 style="margin-top:14px">SEMESTER 5</h3>
+      <ul>
+        <li>Integration and Applications – Probability.</li>
+        <li>Imperative Programming.</li>
+        <li>Numerical Analysis – Statistics.</li>
+        <li>Control Systems – Data Analysis.</li>
+        <li>Modeling – Architecture.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INTERNATIONAL MOBILITY (with LV2 subtab) -->
+  <section id="mobility" class="tab">
+    <div class="card pad">
+      <div class="subnav" id="mob-subnav">
+        <a href="#" data-subtab="mob-overview" class="active">Overview</a>
+        <a href="#" data-subtab="mob-lv2">LV2</a>
+      </div>
+
+      <div id="mob-overview" class="subtab active">
+        <h2>INTERNATIONAL MOBILITY</h2>
+        <p>
+          Since I'm already studying abroad, international mobility is not a top priority for me at the moment. However, I still see it as a valuable option to enhance my skills, explore different research cultures, and expand my international network in computer science.
+        </p>
+        <p>
+          ENSEEIHT offers all its students the opportunity to study abroad, not only within Europe, but also in North America — in the United States or Canada — with selected partner institutions such as Polytechnique Montréal, Université Laval, and Université de Sherbrooke.
+        </p>
+      </div>
+
+      <div id="mob-lv2" class="subtab">
+        <h2>LV2 — Languages & Proficiency</h2>
+        <p>Proficiency shown as signal bars.</p>
+        <div class="lang"><strong>Arabic</strong><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="lang"><strong>French</strong><div class="bar"><i style="width:80%"></i></div></div>
+        <div class="lang"><strong>English</strong><div class="bar"><i style="width:70%"></i></div></div>
+        <div class="lang"><strong>Spanish</strong><div class="bar"><i style="width:20%"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section id="activities" class="tab">
+    <div class="card pad">
+      <h2>SPORTS</h2>
+      <p>I like all the team sports especially football, basketball and handball. I also like running and cycling.</p>
+      <h2 style="margin-top:25px">SOCIAL ENGAGEMENT</h2>
+      <ul>
+        <li>Participation in food aid programs.</li>
+        <li>Blood donation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CAREER DEVELOPMENT -->
+  <section id="career" class="tab">
+    <div class="card pad">
+      <h2>CAREER DEVELOPMENT</h2>
+      <p>My career plan combines engineering rigor and problem-solving. I enjoy applied mathematics and computer science, and I'm drawn to projects where algorithms, modeling, and optimization create real-world impact.</p>
+      <div class="row" style="margin-top:12px">
+        <a class="badge" href="Youssef%20HASSABI%20cv%20frr%20(1).pdf" id="cv-fr" target="_blank">CV FR</a>
+        <a class="badge" href="Youssef%20HASSABI%20cv%20ang%20(1).pdf" id="cv-en" target="_blank">CV ENG</a>
+        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/youssef-hassabi-04a860319/" class="badge" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIVIC -->
+  <section id="civic" class="tab">
+    <div class="card pad">
+      <h2>SUSTAINABILITY & CIVIC ENGAGEMENT</h2>
+      <p>Deeply committed to social responsibility, I actively participate in community initiatives such as food aid, blood donation, and environmental awareness campaigns.</p>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -107,12 +198,26 @@
   const tabs = document.querySelectorAll('.tab');
   const links = document.querySelectorAll('#menu a');
   function showTab(id){
+    const el = document.getElementById(id);
+    if(!el){ return; } // guard to avoid JS errors if id not found
     tabs.forEach(t=>t.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
     links.forEach(a=>a.classList.toggle('active', a.dataset.tab===id));
     window.scrollTo({top:0,behavior:'instant'});
   }
   links.forEach(a=>a.addEventListener('click', e=>{e.preventDefault(); showTab(a.dataset.tab);}));
+
+  // Mobility subtabs
+  const sublinks = document.querySelectorAll('#mob-subnav a');
+  const subtabs = document.querySelectorAll('#mobility .subtab');
+  function showSub(id){
+    const el = document.getElementById(id);
+    if(!el){ return; }
+    subtabs.forEach(s=>s.classList.remove('active'));
+    el.classList.add('active');
+    sublinks.forEach(s=>s.classList.toggle('active', s.dataset.subtab===id));
+  }
+  sublinks.forEach(s=>s.addEventListener('click', e=>{e.preventDefault(); showSub(s.dataset.subtab);}));
 </script>
 </body>
 </html>
