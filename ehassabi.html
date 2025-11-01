@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Youssef Hassabi — E-Portfolio</title>
+  <meta name="description" content="E-portfolio — Welcome, Engineering Course, International Mobility, Sports & Social Engagement, Career Development." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0b1020; --bg2:#0e1630; --card: rgba(255,255,255,0.06);
+      --text:#eaf1ff; --muted:#a9b6d3; --accent:#6b6bff; --accent-2:#6ce0ff;
+      --radius: 16px; --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 10% -10%, rgba(108,224,255,.2), transparent), radial-gradient(900px 600px at 90% 0%, rgba(107,107,255,.18), transparent), linear-gradient(180deg,var(--bg1),var(--bg2));}
+    a{color:var(--accent-2);text-decoration:none}
+    img{max-width:100%;display:block}
+
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(14,22,48,.75),rgba(14,22,48,.55));border-bottom:1px solid rgba(255,255,255,.06)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{font-weight:800;font-size:18px;color:#fff}
+    .menu{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .menu a{color:var(--muted);font-weight:700}
+    .menu a.active{color:#fff}
+
+    main{position:relative;z-index:2}
+    section{padding:70px 0}
+    h1,h2{line-height:1.05;margin:0 0 12px}
+    h1{font-size:42px}
+    h2{font-size:36px}
+    p{color:var(--muted);font-size:18px}
+
+    .grid{display:grid;grid-template-columns: 340px 1fr;gap:28px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card.pad{padding:22px}
+    .avatar{width:220px;height:220px;border-radius:50%;object-fit:cover;margin:0 auto;border:3px solid rgba(255,255,255,.12);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+    .badge{display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#d7e6ff;padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+
+    .tab{display:none}
+    .tab.active{display:block}
+
+    .subnav{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+    .subnav a{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);color:#d7e6ff;font-weight:700;font-size:13px}
+    .subnav a.active{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#08122b}
+    .subtab{display:none}
+    .subtab.active{display:block}
+
+    .lang{display:grid;grid-template-columns: 200px 1fr;align-items:center;gap:14px;margin:12px 0}
+    .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.08);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+    .bar > i{position:absolute;inset:0;width:0%;background:linear-gradient(90deg,var(--accent-2),var(--accent));}
+
+    footer{padding:26px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
+    @media (max-width:900px){.grid{grid-template-columns: 1fr}h1{font-size:34px}h2{font-size:28px}.lang{grid-template-columns: 1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="logo">Youssef HASSABI</div>
+    <nav class="menu" id="menu">
+      <a href="#" data-tab="welcome" class="active">WELCOME</a>
+      <a href="#" data-tab="course">ENGINEERING COURSE</a>
+      <a href="#" data-tab="mobility">INTERNATIONAL MOBILITY</a>
+      <a href="#" data-tab="activities">SPORTS & SOCIAL ENGAGEMENT</a>
+      <a href="#" data-tab="career">CAREER DEVELOPMENT</a>
+      <a href="#" data-tab="civic">SUSTAINABILITY & CIVIC ENGAGEMENT</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="welcome" class="tab active">
+    <div class="grid">
+      <div class="card pad" style="display:grid;place-items:center">
+        <img class="avatar" src="youssef.jpg" alt="Portrait of Youssef Hassabi" />
+      </div>
+      <div class="card pad">
+        <h1>HELLO ,</h1>
+        <p>
+          I am <strong>Youssef HASSABI</strong>. After studying two years of Preparatory Classes for Engineering Schools (CPGE MP) at Lycée d’Excellence Mohammed VI – LEM6, Casablanca. I am now a proud student of <strong>ENSEEIHT</strong>, a top-ranking engineering graduate school based in Toulouse. Since I have always been passionate about mathematics, technologies and computer science, I am following the <strong>Computer and Digital Science Engineering</strong> course.
+        </p>
+        <div class="row" style="margin-top:8px">
+          <span class="badge">Applied Math</span>
+          <span class="badge">Computer Science</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="course" class="tab">
+    <div class="card pad">
+      <h2>ENGINEERING COURSE</h2>
+      <p>I'm currently studying for a diploma in digital and computer science engineering. We follow a common core covering all the subjects listed below; this page will be updated each semester.</p>
+      <h3 style="margin-top:14px">SEMESTER 5</h3>
+      <ul>
+        <li>Integration and Applications – Probability.</li>
+        <li>Imperative Programming.</li>
+        <li>Numerical Analysis – Statistics.</li>
+        <li>Control Systems – Data Analysis.</li>
+        <li>Modeling – Architecture.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="mobility" class="tab">
+    <div class="card pad">
+      <div class="subnav" id="mob-subnav">
+        <a href="#" data-subtab="mob-overview" class="active">Overview</a>
+        <a href="#" data-subtab="mob-lv2">LV2</a>
+      </div>
+
+      <div id="mob-overview" class="subtab active">
+        <h2>INTERNATIONAL MOBILITY</h2>
+        <p>
+          Since I'm already studying abroad, international mobility is not a top priority for me at the moment. However, I still see it as a valuable opportunity to enhance my skills, explore different research cultures, and expand my international network in computer science.
+        </p>
+        <p>
+          ENSEEIHT offers all its students the opportunity to study abroad, not only within Europe, but also in North America — in the United States or Canada — with selected partner institutions such as Polytechnique Montréal, Université Laval, and Université de Sherbrooke.
+        </p>
+      </div>
+
+      <div id="mob-lv2" class="subtab">
+        <h2>LV2 — Languages & Proficiency</h2>
+        <p>Proficiency shown as signal bars.</p>
+        <div class="lang"><strong>Arabic</strong><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="lang"><strong>French</strong><div class="bar"><i style="width:80%"></i></div></div>
+        <div class="lang"><strong>English</strong><div class="bar"><i style="width:70%"></i></div></div>
+        <div class="lang"><strong>Spanish</strong><div class="bar"><i style="width:20%"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="activities" class="tab">
+    <div class="card pad">
+      <h2>SPORTS</h2>
+      <p>I like all the collective sports especially football, basketball and handball. I also like running and cycling.</p>
+      <h2 style="margin-top:25px">SOCIAL ENGAGEMENT</h2>
+      <ul>
+        <li>Participation in food aid programs.</li>
+        <li>Blood donation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="career" class="tab">
+    <div class="card pad">
+      <h2>CAREER DEVELOPMENT</h2>
+      <p>My career plan combines engineering rigor and data-driven thinking. I enjoy applied mathematics and computer science, and I'm drawn to projects where algorithms, modeling, and optimization create real-world impact.</p>
+      <div class="row" style="margin-top:12px">
+        <a class="badge" href="Youssef%20HASSABI%20cv%20frr%20(1).pdf" id="cv-fr" target="_blank">CV FR</a>
+        <a class="badge" href="Youssef%20HASSABI%20cv%20ang%20(1).pdf" id="cv-en" target="_blank">CV ENG</a>
+        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/youssef-hassabi-04a860319/" class="badge" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="civic" class="tab">
+    <div class="card pad">
+      <h2>SUSTAINABILITY & CIVIC ENGAGEMENT</h2>
+      <p>Deeply committed to social responsibility, I actively participate in community initiatives such as food aid, blood donation, and environmental awareness campaigns. I believe that small, consistent actions can drive meaningful change, whether through volunteering, promoting sustainable practices, or supporting local solidarity projects. My engagement reflects a desire to contribute to a more equitable and environmentally conscious society.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div>© <span id="y"></span> • Youssef Hassabi — E-Portfolio</div>
+    <div style="color:var(--muted)">Designed & built with clean HTML/CSS</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const tabs = document.querySelectorAll('.tab');
+  const links = document.querySelectorAll('#menu a');
+  function showTab(id){
+    tabs.forEach(t=>t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    links.forEach(a=>a.classList.toggle('active', a.dataset.tab===id));
+    window.scrollTo({top:0,behavior:'instant'});
+  }
+  links.forEach(a=>a.addEventListener('click', e=>{e.preventDefault(); showTab(a.dataset.tab);}));
+
+  const sublinks = document.querySelectorAll('#mob-subnav a');
+  const subtabs = document.querySelectorAll('#mobility .subtab');
+  function showSub(id){
+    subtabs.forEach(s=>s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    sublinks.forEach(s=>s.classList.toggle('active', s.dataset.subtab===id));
+  }
+  sublinks.forEach(s=>s.addEventListener('click', e=>{e.preventDefault(); showSub(s.dataset.subtab);}));
+</script>
+</body>
+</html>
