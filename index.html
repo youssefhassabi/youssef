@@ -9,58 +9,119 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
+    :root {
       --bg1:#0b1020; --bg2:#0e1630; --card: rgba(255,255,255,0.06);
       --text:#eaf1ff; --muted:#a9b6d3; --accent:#6b6bff; --accent-2:#6ce0ff;
       --radius: 16px; --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 10% -10%, rgba(108,224,255,.2), transparent), radial-gradient(900px 600px at 90% 0%, rgba(107,107,255,.18), transparent), linear-gradient(180deg,var(--bg1),var(--bg2));}
-    a{color:var(--accent-2);text-decoration:none}
-    img{max-width:100%;display:block}
+    * { box-sizing:border-box }
+    html,body {
+      height:100%;
+      margin:0;
+      font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:radial-gradient(1200px 600px at 10% -10%, rgba(108,224,255,.2), transparent),
+                 radial-gradient(900px 600px at 90% 0%, rgba(107,107,255,.18), transparent),
+                 linear-gradient(180deg,var(--bg1),var(--bg2));
+    }
+    a { color:var(--accent-2); text-decoration:none }
+    img { max-width:100%; display:block }
 
-    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(14,22,48,.75),rgba(14,22,48,.55));border-bottom:1px solid rgba(255,255,255,.06)}
-    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .logo{font-weight:800;font-size:18px;color:#fff}
-    .menu{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    .menu a{color:var(--muted);font-weight:700}
-    .menu a.active{color:#fff}
+    header {
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(8px);
+      background:linear-gradient(180deg,rgba(14,22,48,.75),rgba(14,22,48,.55));
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .wrap { max-width:1100px;margin:0 auto;padding:0 20px }
+    .nav { display:flex;align-items:center;justify-content:space-between;padding:14px 0 }
+    .logo { font-weight:800;font-size:18px;color:#fff }
+    .menu { display:flex;gap:18px;align-items:center;flex-wrap:wrap }
+    .menu a { color:var(--muted);font-weight:700 }
+    .menu a.active { color:#fff }
 
-    main{position:relative;z-index:2}
-    section{padding:70px 0}
-    h1,h2{line-height:1.05;margin:0 0 12px}
-    h1{font-size:42px}
-    h2{font-size:36px}
-    p{color:var(--muted);font-size:18px}
+    main { position:relative;z-index:2 }
+    section { padding:70px 0 }
+    h1,h2 { line-height:1.05;margin:0 0 12px }
+    h1 { font-size:42px }
+    h2 { font-size:36px }
+    p { color:var(--muted);font-size:18px }
 
-    .grid{display:grid;grid-template-columns: 340px 1fr;gap:28px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .card.pad{padding:22px}
-    .avatar{width:220px;height:220px;border-radius:50%;object-fit:cover;margin:0 auto;border:3px solid rgba(255,255,255,.12);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .grid { display:grid;grid-template-columns: 340px 1fr;gap:28px }
+    .card {
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow)
+    }
+    .card.pad { padding:22px }
+    .avatar {
+      width:220px;height:220px;border-radius:50%;object-fit:cover;
+      margin:0 auto;border:3px solid rgba(255,255,255,.12);
+      box-shadow:0 10px 30px rgba(0,0,0,.35)
+    }
 
-    .badge{display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#d7e6ff;padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px}
-    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .badge {
+      display:inline-flex;gap:10px;align-items:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      color:#d7e6ff;
+      padding:8px 12px;border-radius:999px;
+      font-weight:700;font-size:13px
+    }
+    .row { display:flex;gap:12px;flex-wrap:wrap }
 
-    .ratio{position:relative;width:100%;padding-top:56.25%;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04)}
-    .ratio > video{position:absolute;inset:0;width:100%;height:100%;display:block}
+    .ratio {
+      position:relative;width:100%;padding-top:56.25%;
+      border-radius:16px;overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04)
+    }
+    .ratio > video {
+      position:absolute;inset:0;width:100%;height:100%;display:block
+    }
 
-    .tab{display:none}
-    .tab.active{display:block}
+    .tab { display:none }
+    .tab.active { display:block }
 
-    /* Subnav for mobility */
-    .subnav{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
-    .subnav a{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);color:#d7e6ff;font-weight:700;font-size:13px}
-    .subnav a.active{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#08122b}
-    .subtab{display:none}
-    .subtab.active{display:block}
+    .subnav {
+      display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px
+    }
+    .subnav a {
+      padding:8px 12px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.06);
+      color:#d7e6ff;font-weight:700;font-size:13px
+    }
+    .subnav a.active {
+      background:linear-gradient(90deg,var(--accent-2),var(--accent));
+      color:#08122b
+    }
+    .subtab { display:none }
+    .subtab.active { display:block }
 
-    .lang{display:grid;grid-template-columns: 200px 1fr;align-items:center;gap:14px;margin:12px 0}
-    .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.08);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
-    .bar > i{position:absolute;inset:0;width:0%;background:linear-gradient(90deg,var(--accent-2),var(--accent));}
+    .lang {
+      display:grid;grid-template-columns: 200px 1fr;align-items:center;
+      gap:14px;margin:12px 0
+    }
+    .bar {
+      height:10px;border-radius:999px;background:rgba(255,255,255,.08);
+      position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1)
+    }
+    .bar > i {
+      position:absolute;inset:0;width:0%;
+      background:linear-gradient(90deg,var(--accent-2),var(--accent));
+    }
 
-    footer{padding:26px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
-    @media (max-width:900px){.grid{grid-template-columns: 1fr}h1{font-size:34px}h2{font-size:28px}.lang{grid-template-columns: 1fr}}
+    footer {
+      padding:26px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)
+    }
+    @media (max-width:900px){
+      .grid{grid-template-columns: 1fr}
+      h1{font-size:34px}
+      h2{font-size:28px}
+      .lang{grid-template-columns: 1fr}
+    }
   </style>
 </head>
 <body>
@@ -90,10 +151,9 @@
         <p>
           I am <strong>Youssef HASSABI</strong>. After studying two years of Preparatory Classes for Engineering Schools (CPGE MP) at Lycée d’Excellence Mohammed VI – LEM6, Casablanca. I am now a proud student of <strong>ENSEEIHT</strong>, a top-ranking engineering graduate school based in Toulouse. Since I have always been passionate about mathematics, technologies and computer science, I am following the <strong>Computer and Digital Science Engineering</strong> course.
         </p>
-        <!-- Embedded intro video -->
         <div class="ratio" style="margin:20px 0;">
           <video controls preload="metadata" playsinline>
-            <source src="about-me.mp4" type="video/mp4" />
+            <source src="aboutme.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -121,7 +181,7 @@
     </div>
   </section>
 
-  <!-- INTERNATIONAL MOBILITY (with LV2 subtab) -->
+  <!-- INTERNATIONAL MOBILITY -->
   <section id="mobility" class="tab">
     <div class="card pad">
       <div class="subnav" id="mob-subnav">
@@ -198,13 +258,16 @@
   const links = document.querySelectorAll('#menu a');
   function showTab(id){
     const el = document.getElementById(id);
-    if(!el){ return; } // guard to avoid JS errors if id not found
+    if(!el){ return; }
     tabs.forEach(t=>t.classList.remove('active'));
     el.classList.add('active');
     links.forEach(a=>a.classList.toggle('active', a.dataset.tab===id));
     window.scrollTo({top:0,behavior:'instant'});
   }
-  links.forEach(a=>a.addEventListener('click', e=>{e.preventDefault(); showTab(a.dataset.tab);}));
+  links.forEach(a=>a.addEventListener('click', e=>{
+    e.preventDefault();
+    showTab(a.dataset.tab);
+  }));
 
   // Mobility subtabs
   const sublinks = document.querySelectorAll('#mob-subnav a');
@@ -216,8 +279,10 @@
     el.classList.add('active');
     sublinks.forEach(s=>s.classList.toggle('active', s.dataset.subtab===id));
   }
-  sublinks.forEach(s=>s.addEventListener('click', e=>{e.preventDefault(); showSub(s.dataset.subtab);}));
+  sublinks.forEach(s=>s.addEventListener('click', e=>{
+    e.preventDefault();
+    showSub(s.dataset.subtab);
+  }));
 </script>
 </body>
 </html>
-
