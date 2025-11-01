@@ -93,7 +93,7 @@
         <!-- Embedded intro video -->
         <div class="ratio" style="margin:20px 0;">
           <video controls preload="metadata" playsinline>
-            <source src="about-me.mp4" type="video/mp4" />
+            <source src=\"aboutme.mp4\" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -106,20 +106,7 @@
   </section>
 
   <!-- ENGINEERING COURSE -->
-  <section id="course" class="tab">
-    <div class="card pad">
-      <h2>ENGINEERING COURSE</h2>
-      <p>I'm currently studying for a diploma in digital and computer science engineering. We follow a common core covering all the subjects listed below; this page will be updated each semester.</p>
-      <h3 style="margin-top:14px">SEMESTER 5</h3>
-      <ul>
-        <li>Integration and Applications – Probability.</li>
-        <li>Imperative Programming.</li>
-        <li>Numerical Analysis – Statistics.</li>
-        <li>Control Systems – Data Analysis.</li>
-        <li>Modeling – Architecture.</li>
-      </ul>
-    </div>
-  </section>
+  <section id=\"course\" class=\"tab\">\n    <div class=\"card pad\">\n      <div class=\"subnav\" id=\"course-subnav\">\n        <a href=\"#\" data-subtab=\"course-overview\" class=\"active\">Overview</a>\n        <a href=\"#\" data-subtab=\"course-projects\">Projects</a>\n      </div>\n\n      <div id=\"course-overview\" class=\"subtab active\">\n        <h2>ENGINEERING COURSE</h2>\n        <p>I'm currently studying for a diploma in digital and computer science engineering. We follow a common core covering all the subjects listed below; this page will be updated each semester.</p>\n        <h3 style=\"margin-top:14px\">SEMESTER 5</h3>\n        <ul>\n          <li>Integration and Applications – Probability.</li>\n          <li>Imperative Programming.</li>\n          <li>Numerical Analysis – Statistics.</li>\n          <li>Control Systems – Data Analysis.</li>\n          <li>Modeling – Architecture.</li>\n        </ul>\n      </div>\n\n      <div id=\"course-projects\" class=\"subtab\">\n        <h2>Projects</h2>\n        <p><em>Nothing yet.</em></p>\n      </div>\n    </div>\n  </section>
 
   <!-- INTERNATIONAL MOBILITY (with LV2 subtab) -->
   <section id="mobility" class="tab">
@@ -217,7 +204,6 @@
     sublinks.forEach(s=>s.classList.toggle('active', s.dataset.subtab===id));
   }
   sublinks.forEach(s=>s.addEventListener('click', e=>{e.preventDefault(); showSub(s.dataset.subtab);}));
-</script>
+  // Course subtabs\n  const courseSublinks = document.querySelectorAll('#course-subnav a');\n  const courseSubtabs = document.querySelectorAll('#course .subtab');\n  function showCourseSub(id){\n    const el = document.getElementById(id);\n    if(!el){ return; }\n    courseSubtabs.forEach(s=>s.classList.remove('active'));\n    el.classList.add('active');\n    courseSublinks.forEach(s=>s.classList.toggle('active', s.dataset.subtab===id));\n  }\n  courseSublinks.forEach(s=>s.addEventListener('click', e=>{e.preventDefault(); showCourseSub(s.dataset.subtab);}));\n</script>
 </body>
 </html>
-
